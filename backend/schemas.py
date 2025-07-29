@@ -26,7 +26,7 @@ class UsuarioUpdate(BaseModel):
 class UsuarioOut(UsuarioBase):
     id_usuario: int
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # --- EJERCICIOS ---
@@ -43,7 +43,7 @@ class EjercicioCreate(EjercicioBase):
 class EjercicioOut(EjercicioBase):
     id_ejercicio: int
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # --- ARTICULOS ---
@@ -59,7 +59,7 @@ class ArticuloCreate(ArticuloBase):
 class ArticuloOut(ArticuloBase):
     id_articulo: int
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # --- TESTS ---
@@ -74,7 +74,7 @@ class TestCreate(TestBase):
 class TestOut(TestBase):
     id_test: int
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # --- PREGUNTAS ---
@@ -91,7 +91,7 @@ class PreguntaCreate(PreguntaBase):
 class PreguntaOut(PreguntaBase):
     id_pregunta: int
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # --- POSTS (FORO) ---
@@ -107,7 +107,7 @@ class PostCreate(PostBase):
 class PostOut(PostBase):
     id_post: int
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 # --- COMENTARIOS (FORO) ---
@@ -123,4 +123,4 @@ class ComentarioOut(ComentarioBase):
     id_comentario: int
     id_post: int
     class Config:
-        orm_mode = True
+        from_attributes = True

@@ -10,21 +10,28 @@ export default function LoginScreen({ navigation }) {
   const [contrasena, setContrasena] = useState('');
 
   const handleLogin = async () => {
+    console.log('Login presionado');
     try {
+      console.log('Enviando datos:', { email, contrasena });
       const res = await loginUsuario({ email, contrasena });
+      console.log('Respuesta backend:', res.data);
 
       const usuarioId = res.data.usuario_id;
-
-      
       await AsyncStorage.setItem('usuario_id', String(usuarioId));
-
       Alert.alert('Bienvenido', `ID Usuario: ${usuarioId}`);
-
-      
       navigation.navigate('Home');
-
     } catch (err) {
-      Alert.alert('Error', 'Credenciales incorrectas');
+      console.error('Error en login:', err);
+      if (err?.response) {
+        // Error de backend
+        Alert.alert('Error', err.response.data?.detail || 'Error de backend');
+      } else if (err?.request) {
+        // No se recibió respuesta
+        Alert.alert('Error', 'No se recibió respuesta del servidor');
+      } else {
+        // Otro error
+        Alert.alert('Error', err.message || 'Error desconocido');
+      }
     }
   };
 

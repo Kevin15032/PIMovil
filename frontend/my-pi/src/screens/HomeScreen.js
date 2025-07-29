@@ -14,7 +14,6 @@ export default function HomeScreen({ navigation }) {
 
       <BotonPrincipal titulo="Ejercicios de Relajación" onPress={() => navigation.navigate('Ejercicios')} />
       <BotonPrincipal titulo="Artículos y Consejos" onPress={() => navigation.navigate('Articulos')} />
-      <BotonPrincipal titulo="Test de Estrés" onPress={() => navigation.navigate('Tests')} />
       <BotonPrincipal titulo="Foro y Comunidad" onPress={() => navigation.navigate('Foro')} />
 
       <Text style={styles.firma}>Cuidar tu mente también es avanzar ✨</Text>
