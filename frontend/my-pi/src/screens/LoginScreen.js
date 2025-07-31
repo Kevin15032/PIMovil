@@ -1,6 +1,6 @@
 // src/screens/LoginScreen.js
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, StyleSheet, Alert, Button } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { loginUsuario } from '../api/api';
 import BotonPrincipal from '../components/BotonPrincipal';
@@ -23,13 +23,10 @@ export default function LoginScreen({ navigation }) {
     } catch (err) {
       console.error('Error en login:', err);
       if (err?.response) {
-        // Error de backend
         Alert.alert('Error', err.response.data?.detail || 'Error de backend');
       } else if (err?.request) {
-        // No se recibió respuesta
         Alert.alert('Error', 'No se recibió respuesta del servidor');
       } else {
-        // Otro error
         Alert.alert('Error', err.message || 'Error desconocido');
       }
     }
@@ -61,6 +58,11 @@ export default function LoginScreen({ navigation }) {
       <Text style={styles.link} onPress={() => navigation.navigate('Register')}>
         ¿No tienes cuenta? Regístrate
       </Text>
+
+      {/* 🔽 Botón añadido sin modificar el resto del código */}
+      <View style={{ marginTop: 20 }}>
+        <Button title="Ir a Ajustes" onPress={() => navigation.navigate('Ajustes')} />
+      </View>
     </View>
   );
 }

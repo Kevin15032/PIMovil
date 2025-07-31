@@ -12,6 +12,7 @@ import ForoScreen from '../screens/ForoScreen';
 import TestPreguntasScreen from '../screens/TestPreguntasScreen'; 
 import DetallePostScreen from '../screens/DetallePostScreen';
 import CrearPostScreen from '../screens/CrearPostScreen';
+import AjustesScreen from '../screens/AjustesScreen';
 
 
 
@@ -31,6 +32,8 @@ export default function AppNavigator() {
         <Stack.Screen name="PreguntasTest" component={TestPreguntasScreen} options={{ title: 'Preguntas del Test' }} />
         <Stack.Screen name="DetallePost" component={DetallePostScreen} options={{ title: 'Detalle del Post' }} />
         <Stack.Screen name="CrearPost" component={CrearPostScreen} options={{ title: 'Nuevo Post' }} />
+        <Stack.Screen name="Ajustes" component={AjustesScreen} options={{ title: 'Ajustes' }} />
+        
         
 
 
