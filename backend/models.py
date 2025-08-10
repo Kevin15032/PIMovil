@@ -4,6 +4,8 @@ from .database import Base
 import enum
 from datetime import datetime
 
+
+
 # --- Opcional: para enum tipo en ejercicios ---
 class TipoEjercicioEnum(enum.Enum):
     relajacion = "relajacion"
